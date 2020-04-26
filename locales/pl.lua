@@ -25,4 +25,5 @@ Locales['pl'] = {
   ['driving_too_fast'] = '~r~Przekroczenie prędkości! ,~s~ limit prędkości to: ~y~%s~s~ km/h!',
   ['errors'] = 'błędy: ~r~%s~s~/%s',
   ['you_damaged_veh'] = 'uszkodziłeś auto',
+  ['not_enough_money'] = 'You dont have enough money!',
 }

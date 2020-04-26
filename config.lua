@@ -1,8 +1,8 @@
-Config                 = {}
-Config.DrawDistance    = 100.0
-Config.MaxErrors       = 5
-Config.SpeedMultiplier = 3.6
-Config.Locale          = 'fr'
+Config                 		= {}
+Config.DrawDistance    		= 100.0
+Config.MaxErrors       		= 5
+Config.SpeedMultiplier 		= 3.6
+Config.Locale 				= 'en'
 
 Config.Prices = {
 	dmv         = 500,

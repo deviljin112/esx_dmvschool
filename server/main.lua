@@ -19,11 +19,16 @@ AddEventHandler('esx_dmvschool:addLicense', function(type)
 	end)
 end)
 
-RegisterNetEvent('esx_dmvschool:pay')
-AddEventHandler('esx_dmvschool:pay', function(price)
+ESX.RegisterServerCallback('esx_dmvschool:pay', function(source, cb, price)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
+	local accountMoney = xPlayer.getAccount("money").money
 
-	xPlayer.removeMoney(price)
-	TriggerClientEvent('esx:showNotification', _source, _U('you_paid', ESX.Math.GroupDigits(price)))
+	if accountMoney < price then
+		cb(false)
+	else
+		xPlayer.removeAccountMoney('money', price)
+		TriggerClientEvent('esx:showNotification', _source, _U('you_paid', ESX.Math.GroupDigits(price)))
+		cb(true)
+	end
 end)
